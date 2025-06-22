@@ -1,0 +1,29 @@
+# Copy to watches.toml (gitignored) and edit.
+# Find recreation.gov ids with:  python -m hutmonitor find "Lower Pines"
+
+[[watch]]
+name = "Upper Pines, 2 nights"
+provider = "recgov"
+campground_id = "232447"     # Upper Pines, Yosemite
+arrive = 2027-05-21          # first night
+nights = 2                   # every night must be Available
+# arrive_end = 2027-05-23    # optional: flexible arrival window (any arrival in range)
+# site_types = ["TENT", "STANDARD"]   # case-insensitive substring of campsite_type
+# loops = ["Upper Pines"]
+# sites = ["044", "045"]
+# min_interval_s = 300       # never poll this campground more often (floor 60, default 300)
+
+[[watch]]
+name = "Lower Pines, month-spanning"
+provider = "recgov"
+campground_id = "232450"
+arrive = 2027-06-29
+nights = 3                   # Jun 29, Jun 30, Jul 1 -> fetches both months
+
+[[watch]]
+name = "Galehead Hut"
+provider = "amc"             # stub: prints the booking link, never reports openings
+campground_id = "galehead"
+arrive = 2027-08-14
+nights = 1
+url = "https://www.outdoors.org/"
